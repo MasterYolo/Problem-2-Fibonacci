@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <script>
+            function doFibonacci() {
+                var sum = 0;
+                var fib = [];
+                
+                fib[0] = 0;
+                fib[1] = 1;
+                
+                for (var i = 2; i <= 100; i++) {
+                    fib[i] = fib[i - 2] + fib[i - 1];
+                    if (fib[i] > 4000000) { //Break if the fibonacci number is greater than 400000!
+                        break;
+                    }
+                    if (fib[i] % 2 == 0) {
+                        sum += fib[i];
+                    }
+
+                }
+                document.getElementById("demo").innerHTML += "<br />" + sum + "<br />";
+            }
+        </script>
+        <p id ="demo"> Answer </p>
+        <button onclick="doFibonacci()">Calculate</button>
+    </body>
+</html>
